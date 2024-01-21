@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  livros-react:
+    build:
+      context: .
+      dockerfile: ./.docker/dockerfiles/Dockerfile
+    entrypoint: ["sh", "./.docker/entrypoint.sh"]
+    container_name: livros-react
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/usr/livros-react/app
